@@ -10,4 +10,7 @@ myEmitter.on("newSale", () => {
     console.log("Costumer name: Jonas");
 })
 
-myEmitter.emit("newSale");
+myEmitter.on("newSale", stock => {
+    console.log(`There are now ${stock} items`)
+})
+myEmitter.emit("newSale", 100);
